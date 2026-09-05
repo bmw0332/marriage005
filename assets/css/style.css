@@ -127,11 +127,14 @@ h3{font-size:17px;line-height:1.55}
 .cta-terms{margin-top:10px;font-size:13.5px;line-height:1.7;color:var(--muted)}
 @media (min-width:768px){ .cta-terms{font-size:14px} }
 .cta-block--c .cta-terms{text-align:center}
-.cta-terms--mark{margin-top:5px;display:flex;align-items:baseline;gap:7px;
+/* flexにすると文節spanが個別のフレックス要素になり折り返しが壊れるため、
+   マーカーは絶対配置で付ける */
+.cta-terms--mark{position:relative;margin-top:6px;padding-left:14px;
   color:var(--ink);font-weight:700}
-.cta-block--c .cta-terms--mark{justify-content:center}
-.cta-terms--mark::before{content:"";flex:none;width:6px;height:6px;border-radius:1px;
-  background:var(--ink);transform:translateY(-2px)}
+.cta-terms--mark::before{content:"";position:absolute;left:0;top:.62em;
+  width:6px;height:6px;border-radius:1px;background:var(--ink)}
+.cta-block--c .cta-terms--mark{padding-left:0}
+.cta-block--c .cta-terms--mark::before{display:none}
 
 /* --------------------------------------------------------------------------
    5. ヘッダー
@@ -256,6 +259,16 @@ h3{font-size:17px;line-height:1.55}
 }
 .panel__ft{padding:10px 16px;border-top:1px solid var(--line);background:var(--paper-2)}
 
+
+/* 写真 */
+.shot{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper-2)}
+.shot img{width:100%;height:auto;display:block}
+.shot figcaption{padding:10px 14px;border-top:1px solid var(--line);background:var(--paper)}
+.hero__media .shot{margin-top:22px}
+@media (min-width:1024px){ .hero__media .shot{margin-top:0;position:sticky;top:calc(var(--hd) + 20px)} }
+.shot--wide{max-width:620px;margin:20px auto 0}
+@media (min-width:768px){ .shot--wide{margin-top:26px} }
+
 /* --------------------------------------------------------------------------
    7. 対象者確認
    -------------------------------------------------------------------------- */
@@ -366,6 +379,8 @@ h3{font-size:17px;line-height:1.55}
 .advisor__name{font-size:19px;font-weight:700;color:var(--ink);line-height:1.4}
 @media (min-width:768px){ .advisor__name{font-size:21px} }
 .advisor__role{margin-top:3px;font-size:13px;color:var(--muted);line-height:1.6}
+.advisor__role--lead{margin-top:0;font-size:15px;font-weight:700;color:var(--ink);line-height:1.65}
+@media (min-width:768px){ .advisor__role--lead{font-size:16px} }
 .advisor__body{margin-top:16px}
 .advisor__body p{font-size:15px;line-height:1.85}
 .advisor__body p+p{margin-top:10px}
@@ -445,6 +460,7 @@ h3{font-size:17px;line-height:1.55}
 .faq__q .ic::before{width:14px;height:2px}
 .faq__q .ic::after{width:2px;height:14px;transition:transform .18s ease}
 .faq__q[aria-expanded="true"] .ic::after{transform:translate(-50%,-50%) scaleY(0)}
+.faq__qt>span{display:inline-block}
 .faq__a{padding:0 2px 18px;font-size:15px;line-height:1.85;max-width:66ch}
 @media (min-width:768px){ .faq__a{font-size:15px} }
 .faq__a[hidden]{display:none}
