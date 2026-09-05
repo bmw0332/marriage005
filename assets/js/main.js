@@ -19,7 +19,7 @@
        例： advisorPhoto: 'assets/images/advisor.webp'
        空欄のままでも、写真なしのレイアウトで正しく表示されます。
        ストック写真や生成画像は使用しないでください。 */
-    advisorPhoto: '',
+    advisorPhoto: 'assets/images/advisor.webp',
     advisorAlt: '坂本 早貴',
 
     /* 埋め込みが使えないときのCTA挙動
@@ -203,7 +203,7 @@
       var img = d.createElement('img');
       img.className = 'advisor__photo';
       img.src = LP_CONFIG.advisorPhoto;
-      img.width = 96; img.height = 96;
+      img.width = 112; img.height = 112;
       img.alt = LP_CONFIG.advisorAlt || '';
       img.loading = 'lazy'; img.decoding = 'async';
       top.insertBefore(img, top.firstChild);
@@ -215,7 +215,7 @@
      -------------------------------------------------------------------- */
   var FAQS = [
     { q: '無料個別診断だけでも大丈夫ですか？',
-      a: ['はい。診断だけで終了できます。入会を前提に話を進める場ではありません。現在の婚活で止まっている可能性が高い場所と、最初に変えることを整理します。'] },
+      a: ['はい。診断だけで終了できます。入会を前提に話を進める場ではありません。現在の婚活で止まっている可能性が高い場所と、最初に変えることを整理し、その内容を診断レポートにまとめてお渡しします。'] },
     { q: '結婚相談所への営業をされますか？',
       a: ['診断内容に応じて、継続支援をご案内する場合があります。ただし、その場で入会を決める必要はありません。現在のアプリや相談所を続ける方がよい場合は、そのままお伝えします。'] },
     { q: '事前に準備するものはありますか？',

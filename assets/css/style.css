@@ -30,7 +30,7 @@
 
   --wrap:1060px;
   --hd:58px;
-  --sec:44px;
+  --sec:41px;
   --r:10px;
 }
 @media (min-width:768px){ :root{ --hd:68px; --sec:70px } }
@@ -127,6 +127,11 @@ h3{font-size:17px;line-height:1.55}
 .cta-terms{margin-top:10px;font-size:13.5px;line-height:1.7;color:var(--muted)}
 @media (min-width:768px){ .cta-terms{font-size:14px} }
 .cta-block--c .cta-terms{text-align:center}
+.cta-terms--mark{margin-top:5px;display:flex;align-items:baseline;gap:7px;
+  color:var(--ink);font-weight:700}
+.cta-block--c .cta-terms--mark{justify-content:center}
+.cta-terms--mark::before{content:"";flex:none;width:6px;height:6px;border-radius:1px;
+  background:var(--ink);transform:translateY(-2px)}
 
 /* --------------------------------------------------------------------------
    5. ヘッダー
@@ -260,7 +265,7 @@ h3{font-size:17px;line-height:1.55}
 }
 .checks li{
   display:flex;gap:11px;align-items:flex-start;
-  padding:11px 0;border-bottom:1px solid var(--line);
+  padding:10px 0;border-bottom:1px solid var(--line);
   font-size:15px;line-height:1.7;color:var(--ink);
 }
 @media (min-width:768px){ .checks li{font-size:15.5px;padding:15px 0} }
@@ -284,7 +289,7 @@ h3{font-size:17px;line-height:1.55}
 @media (min-width:768px){ .steps{grid-template-columns:1fr 1fr;gap:16px} }
 .steps li{
   counter-increment:s;position:relative;
-  padding:15px 16px 15px 52px;border:1px solid var(--line);border-radius:var(--r);
+  padding:14px 16px 14px 52px;border:1px solid var(--line);border-radius:var(--r);
   background:var(--paper);
 }
 .band--tint .steps li{background:var(--paper)}
@@ -295,6 +300,28 @@ h3{font-size:17px;line-height:1.55}
 }
 .steps h3{margin-bottom:6px}
 .steps p{font-size:15px;line-height:1.8}
+
+/* 診断レポートの図（HTML+CSSで構成） */
+.report{margin:16px 0 0}
+@media (min-width:768px){ .report{margin-top:26px} }
+.report__sheet{border:1px solid var(--line-2);border-radius:10px;background:var(--paper);
+  overflow:hidden;max-width:640px}
+.band--tint .report__sheet{background:var(--paper)}
+.report__hd{display:flex;align-items:baseline;justify-content:space-between;gap:8px;
+  flex-wrap:wrap;padding:10px 14px;background:var(--ink)}
+.report__hd b{font-size:13.5px;color:#fff;line-height:1.4}
+.report__hd span{font-size:11px;color:#A9BCCB;font-variant-numeric:tabular-nums}
+.report__grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.report__grid li{background:var(--paper);padding:12px 13px}
+.report__grid b{display:block;font-size:12px;font-weight:700;color:var(--ink);line-height:1.45;
+  margin-bottom:9px;min-height:2.9em}
+@media (min-width:768px){
+  .report__grid b{font-size:12.5px;min-height:0;margin-bottom:11px}
+  .report__grid li{padding:14px 16px}
+}
+.report__grid i{display:block;height:1px;background:var(--line-2)}
+.report__grid i+i{margin-top:9px}
+.report figcaption{margin-top:10px;max-width:640px}
 
 /* --------------------------------------------------------------------------
    9. 実績
@@ -309,7 +336,7 @@ h3{font-size:17px;line-height:1.55}
 .figs .v span{font-size:15px;margin-left:2px}
 
 .facts{border-top:1px solid #2E3E4C}
-.facts li{padding:12px 0;border-bottom:1px solid #2E3E4C;font-size:15px;line-height:1.8}
+.facts li{padding:11px 0;border-bottom:1px solid #2E3E4C;font-size:15px;line-height:1.8}
 @media (min-width:768px){ .facts li{font-size:15.5px} }
 .facts li b{font-weight:700}
 
@@ -322,7 +349,7 @@ h3{font-size:17px;line-height:1.55}
 .case__who{font-size:14px;font-weight:700;color:var(--ink);padding-bottom:12px;
   border-bottom:1px solid var(--line)}
 .case dl{margin:0}
-.case dt{margin-top:11px;font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+.case dt{margin-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
 .case dd{margin:3px 0 0;font-size:15px;line-height:1.8}
 .case dd.is-after{color:var(--ink);font-weight:700}
 
@@ -331,11 +358,11 @@ h3{font-size:17px;line-height:1.55}
    -------------------------------------------------------------------------- */
 .advisor{border:1px solid var(--line);border-radius:var(--r);background:var(--paper);padding:19px}
 @media (min-width:768px){ .advisor{padding:28px 30px} }
-.advisor__top{display:flex;align-items:center;gap:14px;padding-bottom:16px;
+.advisor__top{display:flex;align-items:center;gap:15px;padding-bottom:16px;
   border-bottom:1px solid var(--line)}
-.advisor__photo{flex:none;width:76px;height:76px;border-radius:8px;object-fit:cover;
-  border:1px solid var(--line)}
-@media (min-width:768px){ .advisor__photo{width:96px;height:96px} }
+.advisor__photo{flex:none;width:88px;height:88px;border-radius:9px;object-fit:cover;
+  object-position:50% 30%;border:1px solid var(--line);background:var(--paper-2)}
+@media (min-width:768px){ .advisor__photo{width:112px;height:112px;border-radius:10px} }
 .advisor__name{font-size:19px;font-weight:700;color:var(--ink);line-height:1.4}
 @media (min-width:768px){ .advisor__name{font-size:21px} }
 .advisor__role{margin-top:3px;font-size:13px;color:var(--muted);line-height:1.6}
@@ -349,7 +376,7 @@ h3{font-size:17px;line-height:1.55}
    -------------------------------------------------------------------------- */
 .flow{display:grid;gap:10px}
 @media (min-width:768px){ .flow{grid-template-columns:repeat(3,1fr);gap:18px} }
-.flow li{border:1px solid var(--line);border-radius:var(--r);background:var(--paper);padding:15px}
+.flow li{border:1px solid var(--line);border-radius:var(--r);background:var(--paper);padding:14px}
 .flow .t{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--ink);color:#fff;
   font-size:12px;font-weight:700;letter-spacing:.02em}
 .flow h3{margin:10px 0 6px}
@@ -366,7 +393,7 @@ h3{font-size:17px;line-height:1.55}
 @media (min-width:768px){
   .assure{grid-template-columns:1fr 1fr;column-gap:36px;border-top:0}
 }
-.assure>li{padding:13px 0;border-bottom:1px solid var(--line)}
+.assure>li{padding:12px 0;border-bottom:1px solid var(--line)}
 .assure h3{font-size:16px;display:flex;gap:9px;align-items:flex-start}
 @media (min-width:768px){ .assure h3{font-size:17px} }
 .assure h3::before{
@@ -405,7 +432,7 @@ h3{font-size:17px;line-height:1.55}
 .faq h3{font-size:16px;font-weight:700}
 .faq__q{
   display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
-  width:100%;min-height:52px;padding:14px 2px;text-align:left;
+  width:100%;min-height:50px;padding:13px 2px;text-align:left;
   font-size:16px;font-weight:700;line-height:1.6;color:var(--ink);
 }
 .faq__q .ic{
