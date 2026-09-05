@@ -203,6 +203,10 @@ h3{font-size:17px;line-height:1.55}
 }
 @media (min-width:768px){ .disclose{font-size:13px;max-width:44em} }
 
+.disclose sup{font-size:.7em;vertical-align:super;line-height:0}
+.disclose__src{margin-top:8px;font-size:11.5px;line-height:1.65}
+@media (min-width:768px){ .disclose__src{font-size:12px;max-width:52em} }
+
 /* 信頼要素 */
 .trust{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
 .trust li{
@@ -263,7 +267,8 @@ h3{font-size:17px;line-height:1.55}
 /* 写真 */
 .shot{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper-2)}
 .shot img{width:100%;height:auto;display:block}
-.shot figcaption{padding:10px 14px;border-top:1px solid var(--line);background:var(--paper)}
+.shot figcaption{padding:9px 14px;border-top:1px solid var(--line);background:var(--paper)}
+.hero__media .shot figcaption{font-size:11.5px}
 .hero__media .shot{margin-top:22px}
 @media (min-width:1024px){ .hero__media .shot{margin-top:0;position:sticky;top:calc(var(--hd) + 20px)} }
 .shot--wide{max-width:620px;margin:20px auto 0}
@@ -460,7 +465,7 @@ h3{font-size:17px;line-height:1.55}
 .faq__q .ic::before{width:14px;height:2px}
 .faq__q .ic::after{width:2px;height:14px;transition:transform .18s ease}
 .faq__q[aria-expanded="true"] .ic::after{transform:translate(-50%,-50%) scaleY(0)}
-.faq__qt>span{display:inline-block}
+.faq__qt>span,.pwt>span{display:inline-block}
 .faq__a{padding:0 2px 18px;font-size:15px;line-height:1.85;max-width:66ch}
 @media (min-width:768px){ .faq__a{font-size:15px} }
 .faq__a[hidden]{display:none}
@@ -529,5 +534,8 @@ body.has-sticky{padding-bottom:74px}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
 }
+
+/* 対応ブラウザでは本文も文節単位で折り返す（未対応環境は従来どおり） */
+.steps p,.case dd,.flow p,.prep,.closer,.booking__fb p,.final p,.disclose{word-break:auto-phrase}
 
 [hidden]{display:none !important}
