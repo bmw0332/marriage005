@@ -21,8 +21,8 @@
     metaPixelId: '1387328040199947'   /* Metaピクセル */
   };
 
-  /* 公開初期のヘッドライン案（CRO_TEST_PLAN.md 参照）。A案で公開しています。 */
-  var DEFAULT_VARIANT = 'A';
+  /* 公開中のヘッドライン案（CRO_TEST_PLAN.md 参照）。現在はD案です。 */
+  var DEFAULT_VARIANT = 'D';
 
   /* 保持する流入元パラメータ */
   var SRC_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term',
