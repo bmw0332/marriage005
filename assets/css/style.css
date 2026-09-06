@@ -190,10 +190,8 @@ h3{font-size:17px;line-height:1.55}
 .hero__lede{margin-top:14px;font-size:15.5px;line-height:1.85;color:var(--body)}
 @media (min-width:768px){ .hero__lede{font-size:17px;max-width:34em} }
 .hero__lede b{color:var(--ink);font-weight:700}
-h1 .ln{display:block}
-h1 .ln>span{display:inline-block}
-.hero__lede .ln{display:block}
-.hero__lede .ln>span,.hero__lede .ln b>span{display:inline-block}
+.ln{display:block}
+.ln>span,.ln b>span{display:inline-block}
 
 .hero .cta-block{margin-top:20px}
 @media (min-width:1024px){ .hero .cta-block .btn{max-width:420px} }
@@ -269,6 +267,11 @@ h1 .ln>span{display:inline-block}
 .hero__media .shot figcaption{font-size:11.5px}
 .hero__media .shot{margin-top:22px}
 @media (min-width:1024px){ .hero__media .shot{margin-top:0;position:sticky;top:calc(var(--hd) + 20px)} }
+.report{max-width:620px;margin:26px auto 0;text-align:center}
+.report h3{font-size:17.5px;line-height:1.55}
+@media (min-width:768px){ .report h3{font-size:20px} }
+.report>p{margin-top:9px;font-size:15px;line-height:1.8}
+.report .shot{margin-top:16px}
 .shot--wide{max-width:620px;margin:20px auto 0}
 @media (min-width:768px){ .shot--wide{margin-top:26px} }
 
@@ -342,6 +345,7 @@ h1 .ln>span{display:inline-block}
 /* --------------------------------------------------------------------------
    9. 実績
    -------------------------------------------------------------------------- */
+.proof__src{margin-top:10px}
 .figs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
 @media (min-width:768px){ .figs{gap:20px;max-width:600px} }
 .figs li{padding:14px 16px;border:1px solid #2E3E4C;border-radius:var(--r);background:#1B2836}
@@ -362,7 +366,9 @@ h1 .ln>span{display:inline-block}
 .cases{display:grid;gap:12px}
 @media (min-width:768px){ .cases{grid-template-columns:1fr 1fr;gap:22px} }
 .case{border:1px solid var(--line);border-radius:var(--r);background:var(--paper);padding:17px}
-.case__who{font-size:14px;font-weight:700;color:var(--ink);padding-bottom:12px;
+.case__title{font-size:15.5px;font-weight:700;line-height:1.6;color:var(--ink)}
+@media (min-width:768px){ .case__title{font-size:16.5px} }
+.case__who{margin-top:6px;font-size:13px;font-weight:700;color:var(--muted);padding-bottom:12px;
   border-bottom:1px solid var(--line)}
 .case dl{margin:0}
 .case dt{margin-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
