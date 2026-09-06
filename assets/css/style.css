@@ -214,6 +214,9 @@ h3{font-size:17px;line-height:1.55}
 .trust .fig{font-size:17px;letter-spacing:.01em;font-variant-numeric:tabular-nums}
 @media (min-width:768px){ .trust .fig{font-size:19px} }
 .trust li.is-plain{padding:0;border:0;background:none}
+.trust__stat{width:100%;font-size:14px;line-height:1.65;padding:11px 14px}
+.trust__stat>span{display:inline-block}
+@media (min-width:768px){ .trust__stat{font-size:15px;padding:12px 16px} }
 .trust__ibj img{width:104px;height:37px;object-fit:contain}
 .trust__note{margin-top:9px}
 
